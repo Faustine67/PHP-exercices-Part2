@@ -9,7 +9,7 @@ Vous devrez appeler la fonction comme suit : convertirMajRouge($texte) <p>
 <?php
 $texte= "Bidule";
 
-function convertirMajRouge($phrase) {
+function convertirMajRouge(string $phrase) {
 	$convertirMajRouge=mb_strtoupper( $phrase);
 	return "<p style='color : red'> $convertirMajRouge </p>" ;
 }
