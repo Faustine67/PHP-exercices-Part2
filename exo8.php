@@ -6,7 +6,7 @@ Créer une fonction personnalisée permettant d’afficher l’image N fois à l
 
 <?php
 
-$image= <a href= "http://my.mobirise.com/data/userpic/764.jpg">Image</a > ;
+$image= "http://my.mobirise.com/data/userpic/764.jpg" ;
 $times= 3 ;
 
 echo str_repeat("<img src=$image>",$times);
