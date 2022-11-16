@@ -2,6 +2,7 @@
 
 <p> Créer une fonction personnalisée permettant de remplir une liste déroulante à partir d'un tableau de valeurs. <br>
 Exemple :  <br>
+
 $elements = array("Monsieur","Madame","Mademoiselle"); <br>
 alimenterListeDeroulante($elements); <br>
 </p>
@@ -17,4 +18,17 @@ alimenterListeDeroulante($elements); <br>
 </FORM>
 
 <?php
+$civilite = array ("Monsieur","Madame","Mademoiselle");
 
+alimenterListeDeroulante($civilite);
+
+function alimenterListeDeroulante ($array) {
+    echo"<select>";
+
+    foreach ($array as $input) {
+ echo"<option value= '.$input.'>".$input."</option>" ;
+    }
+ echo "</select>" ;
+ 
+ echo "<input type='OK' value='OK'>";
+}
