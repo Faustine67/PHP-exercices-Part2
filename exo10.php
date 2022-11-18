@@ -9,19 +9,31 @@ de validation (submit) <br>
 <h2> Resultat </h2>
 
 <?php
+echo "<form action='action.php' method='post'>";
 
 $mesChamps = ["Nom","Prenom","Adresse email", "Ville","Sexe"];
 $metier = ["Developpeur Logiciel","Designer Web", "Integrateur", "Chef de projet"];
 
-echo afficherInput($mesChamps);
-echo afficherInput($metier);
+echo afficherInput($mesChamps); 
+echo "<br>";
+echo affichercheckbox ($metier);
 
-function afficherInput(array $tableau) {
-	$result = "<form action='action.php' method='post'>";
-	foreach($tableau as $input) {
-		$result .= "<p>$input : <input type='text' name='$input' /></p>";
+// Liste Deroulante Mes Champs //
+
+function afficherInput($array) {
+	foreach($array as $input) {
+		echo "<label for='$input'>$input </label> <input type=text name=$input> <br>";
 	}
-	$result .= "<p><input type='submit' value='OK'></p>";
+} 
 
-	return $result
+// Radio Button Metier //
+
+function affichercheckbox ($array) {
+	foreach($array as $input) {
+        echo "<input type=radio name=$input value=$input>$input <br>" ;
+    }
 }
+
+
+echo  "<p><input type='submit' value='OK'><br>";
+echo "</form>";

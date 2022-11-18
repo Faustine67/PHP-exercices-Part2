@@ -9,15 +9,15 @@ chaîne de caractère représentant une date.
 
 <?php
 
-// $choixdate="2013-03-15";
-// $date=date_create($choixdate);
+setlocale(LC_TIME, 'fr_FR');
 
-function dateConvert(){
-    setlocale(LC_TIME,['fr', 'Fra', 'fr_Fra']);
-    echo strftime("%A, %e, %B, %Y", mktime(0,0,0,23,02,2018));
+date_default_timezone_set('Europe/Paris');
 
-}
+$date1="2013-03-15";
 
-echo dateConvert();
-// echo date_format($date,'l jS \of F Y');
+// Afficher date du jour en français
+
+$formatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::FULL, IntlDateFormatter::NONE);
+
+    echo ucfirst($formatter->format(date_create($date1)))."<br>";
 ?>
