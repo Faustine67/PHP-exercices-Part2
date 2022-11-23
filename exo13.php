@@ -23,13 +23,12 @@ tests pour vérifier la cohérence de la classe Voiture. <br>
         private$_vitesseActuelle;
         private$_status;
 
-        public function __construct($marque,$modele,$nbPortes,$vitesseActuelle,$status){
+        public function __construct($marque,$modele,$nbPortes){
             $this->_marque=$marque;
             $this->_modele=$modele;
             $this->_nbPortes=$nbPortes;
-            $this->_vitesseActuelle=$vitesseActuelle;
-            $this->_status=$status;
-    
+            $this->_vitesseActuelle=0;
+            $this->_status=0;
         }
         public function getMarque(){
             return $this->_marque;
@@ -51,14 +50,24 @@ tests pour vérifier la cohérence de la classe Voiture. <br>
             return "est stoppé";
             }
         }
+        public function demarrer() {
+            $this->_status=1;
+        }
+
         public function accelerer ($speed){
-            $this->_vitesseActuelle+=$speed;
+            if($this->_status==1){
+            $this->_vitesseActuelle+=$speed ; 
+                return "accelere de".$speed ;
+            }
+            else{
+                return "est stoppé";
+            }
+           ;
         }
         }
-$v1 = new Voiture("Peugeot", "408", 5,0,0) ;
-$v2 = new Voiture("Citroën", "C4", 3,0,0) ;
-$v1->getstatus ();
-$v1->accelerer (50);
-echo $v1->getstatus();
+$v1 = new Voiture("Peugeot", "408", 5);
+$v2 = new Voiture("Citroën", "C4", 3) ;
+echo $v1->getstatus ();
+echo $v1->accelerer (50);
 echo $v1->getMarque()." ". $v1->getModele().$v1->getNbPortes()."<br>";
 echo $v2->getMarque()." ". $v2->getModele().$v2->getNbPortes()."<br>";
