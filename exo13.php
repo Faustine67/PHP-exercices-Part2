@@ -67,6 +67,20 @@ tests pour vérifier la cohérence de la classe Voiture. <br>
             else{
                 return "est stoppé";
             }
+
+            // Soit 120 la vitesse max
+            // $slow= vit sup à 120- 120
+            // ex: $slow = 135- 120
+            // slow= la voiture doit ralentir de 15km/h
+        }
+        public function ralentier ($slow){
+            if (this->_vitesseActuelle> 120){
+              $this->_vitesseActuelle-120==$slow;
+              return "doit ralentir de $slow";
+            }
+            else{
+               return "peut continuer à accelerer";
+            }   
         }
         }
 $v1 = new Voiture("Peugeot", "408", 5);
@@ -74,5 +88,10 @@ $v2 = new Voiture("Citroën", "C4", 3) ;
 echo $v1->demarrer();
 echo $v1->getstatus ();
 echo $v1->accelerer (50);
+echo $v1->ralentir(10);
+echo $v2->demarrer();
+echo $v2->getstatus ();
+echo $v2->accelerer (40);
+echo $v2->ralentir(30);
 echo $v1->getMarque()." ". $v1->getModele()."<br>";
 echo $v2->getMarque()." ". $v2->getModele()."<br>";
