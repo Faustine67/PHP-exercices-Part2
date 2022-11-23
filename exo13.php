@@ -41,7 +41,7 @@ tests pour vérifier la cohérence de la classe Voiture. <br>
                 }
          public function getVitesseActuelle() {
             return $this->_vitesseActuelle;
-                    }
+                }
         public function getstatus() {
             if ($this->_status==1) {
             return "est demarré";
@@ -51,23 +51,28 @@ tests pour vérifier la cohérence de la classe Voiture. <br>
             }
         }
         public function demarrer() {
-            $this->_status=1;
+            if ($this->_status=0) {
+                $this->_status=1 ;
+            return "le vehicule".$this->_marque." ".$this->_modele." demarre";
+            }
+            else{
+            return "le vehicule".$this->_marque." ".$this->_modele." est déjà demarré";
+            }
         }
-
         public function accelerer ($speed){
             if($this->_status==1){
             $this->_vitesseActuelle+=$speed ; 
                 return "accelere de".$speed ;
-            }
+        }
             else{
                 return "est stoppé";
             }
-           ;
         }
         }
 $v1 = new Voiture("Peugeot", "408", 5);
 $v2 = new Voiture("Citroën", "C4", 3) ;
+echo $v1->demarrer();
 echo $v1->getstatus ();
 echo $v1->accelerer (50);
-echo $v1->getMarque()." ". $v1->getModele().$v1->getNbPortes()."<br>";
-echo $v2->getMarque()." ". $v2->getModele().$v2->getNbPortes()."<br>";
+echo $v1->getMarque()." ". $v1->getModele()."<br>";
+echo $v2->getMarque()." ". $v2->getModele()."<br>";
