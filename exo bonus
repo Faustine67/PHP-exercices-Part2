@@ -1,11 +1,58 @@
- <h1> Exercice Bonus <h1>
+<h1> Exercice Bonus </h1>
 
- <p>
- creer class Pull qui va contenir une marque et un prix <br>
- On va afficher ces 2 infos <br>
- Creer une class sweatshirt qui va extend de Pull et qui aura un type de cols <br>
- ON affichera les 3 infos <br>
+<p>
+creer class Pull qui va contenir une marque et un prix <br>
+On va afficher ces 2 infos <br>
+Creer une class sweatshirt qui va extend de Pull et qui aura un type de cols <br>
+On affichera les 3 infos
+</p>
 
- <h2> Resultat <h2>
+<h2> Resultats </h2>
 
-<? php
+<?php
+
+class Pull{
+    private $_marque;
+    private $_prix;
+
+    public function __construct($marque, $prix){
+        $this->_marque = $marque;
+        $this->_prix = $prix;
+    }
+    public function getMarque(){
+        return $this->_marque;
+}
+    public function getPrix(){
+        return $this->_prix;
+}
+    public function getInfos(){
+        return $this->getMarque() . " " . $this->getPrix();
+}
+}
+$pull1 = new Pull("Maje", "100") ;
+echo $v1->getInfos()."<br>";
+
+class Sweatshirt extends Pull {
+    
+    private $_col;
+
+    public function __construct($marque, $prix, $col){
+        parent::__construct($marque, $prix);
+        $this->_col = $col;
+    }
+    public function getInfos(){
+        return parent::getInfos()." ".$this->_col;
+    }
+
+    /**
+     * Set the value of _modele
+     *
+     * @return  self
+     */ 
+    public function set_modele($_col) {
+        $this->_modele = $_col;
+        return $this;
+    }
+}
+$sweatshirt1 = new Sweatshirt("Sandro", "150", "col roulé");
+echo $Pullcol1->getInfos();
