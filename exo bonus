@@ -1,0 +1,11 @@
+ <h1> Exercice Bonus <h1>
+
+ <p>
+ creer class Pull qui va contenir une marque et un prix <br>
+ On va afficher ces 2 infos <br>
+ Creer une class sweatshirt qui va extend de Pull et qui aura un type de cols <br>
+ ON affichera les 3 infos <br>
+
+ <h2> Resultat <h2>
+
+<? php
