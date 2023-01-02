@@ -7,53 +7,9 @@ Vous devrez appeler la fonction comme suit : afficherTableHTML($capitales); <br>
 
 <h2> Résultat </h2>
 
-
-	<!-- // <table border=1>	// -->
-	<!-- // Entete du tableau // -->
-
-<!-- //
-<thead>	
-		<tr>
-			<th> Pays </th>
-			<th> Capitales </th>
-		</tr>
-	</thead>
-
-// -->
-
-<!--	//Corps du tableau // -->
-
-<!-- //
-<tbody>
-	<tr>	
-		<td>France</td>
-		<td>Paris</td>
-</tr>
-	<tr>	
-		<td>Allemagne</td>
-		<td>Berlin</td>
-</tr>
-</tbody>
-</table>
-// -->
-
-
 <?php
 
-//$villes = [
-	//"France" => ["Paris","Lyon","Strasbourg"],
-	//"Allemagne" => ["Berlin", "Munich"] 
-// ];
 
-//var_dump($villes);
-
-//foreach($villes as $pays => $villesPays) {
-	//echo "Le pays $pays a comme villes : <br><ul>";
-	//foreach($villesPays as $ville) {
-	//	echo "<li>$ville</li>";
-	//}
-	//echo "</ul>";
- //}
 
 $capitales = [
 	" France" => "Paris",
@@ -80,8 +36,8 @@ ksort($capitales); // trier le tableau dans l'ordre alphabetique sur la clé
 			<tbody>";
 	foreach($capitales as $pays => $capitale) {
 		$result .= "<tr>
-					<td>".mb_strtoupper($pays)."</td>
-					<td>".ucfirst($capitale)." </td>
+					<td>".mb_strtoupper($pays)."</td> // Met le mot en majuscule //
+					<td>".ucfirst($capitale)." </td> // Met la 1ere lette en majuscule //
 				</tr>";			
 	}
 $result .= "</tbody></table>";
