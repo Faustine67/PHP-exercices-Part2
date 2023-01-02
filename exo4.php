@@ -39,11 +39,9 @@ ksort($capitales); // trier le tableau dans l'ordre alphabetique sur la clé
 		$result .= "<tr>
 					<td>".mb_strtoupper($pays)."</td>
 					<td>".ucfirst($capitale)." </td>
-					<td><a href='https://fr.wikipedia.org/wiki/$capitale' target='blank'>Lien</a></td>
+					<td><a href='https://fr.wikipedia.org/wiki/$capitale' target='blank'>Lien</a></td> 	// target = 'blank'  permet d'ouvrir un nouvel onglet //
 				</tr>";			
 	}
 	$result .= "</tbody></table>";
 	return $result;
 }
-
-// target = 'blank'  permet d'ouvrir un nouvel onglet //
