@@ -57,11 +57,6 @@ class VoitureElec extends Voiture
         return parent::getInfos()." ".$this->_autonomie;
     }
 
-    /**
-     * Set the value of _modele
-     *
-     * @return  self
-     */ 
     public function set_modele($_modele)
     {
         $this->_modele = $_modele;
